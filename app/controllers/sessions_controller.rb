@@ -2,6 +2,10 @@ class SessionsController < ApplicationController
   def new
   end
 
+
+  # this controller creates a new session for a user once they log in. 
+
+
   def create
     user = User.find_by(email: params[:session][:email])
     if authenticated?(user, params)

@@ -11,12 +11,17 @@ class CartsController < ApplicationController
     @items = @cart.retrieve_items
   end
 
+# this controller adds items to a shopping cart.
+
   def destroy
     @item = Item.find(params[:item_id])
     @cart.remove_item(params[:item_id])
     flash[:success] = "Successfully removed <a href=#{item_path(@item)}>#{@item.title}</a> from your cart."
     redirect_to cart_path
   end
+
+  # this method ^ removes an item from the shopping cart
+  
 
   def update
     case
