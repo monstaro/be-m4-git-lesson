@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
   before_action :check_user, only: :show
-
+# This controller creates a new user/
   def new
     @user = User.new
   end
+
+  # user class/method declaration ^ ?
 
   def create
     user = User.new(user_params)
